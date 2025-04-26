@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=3 uid="uid://cecdbaprslg1x"]
+
+[ext_resource type="Texture2D" uid="uid://y2yiash2i00q" path="res://3 этаж.jpg" id="1_1fhj5"]
+[ext_resource type="PackedScene" uid="uid://g6aen0k0p4db" path="res://player/character_body_2d.tscn" id="2_16pka"]
+[ext_resource type="Texture2D" uid="uid://c6y0slliwgv0c" path="res://1 кнопка.png" id="3_1jdk1"]
+[ext_resource type="Texture2D" uid="uid://ifkokmeawx3i" path="res://2 кнопка.png" id="4_6p2dc"]
+[ext_resource type="Texture2D" uid="uid://bpwfxxd2wc1bh" path="res://4 кнопка.png" id="5_fmu3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(440, 39.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(713.5, 116.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(716, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
+size = Vector2(319.875, 113.5)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rj586"]
+b = Vector2(-3, 648)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4d7sh"]
+a = Vector2(0, 652)
+b = Vector2(445, 652)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ir8iy"]
+a = Vector2(1152, 106)
+b = Vector2(1157, 426)
+
+[node name="level_3" type="Node2D"]
+
+[node name="3Этаж" type="Sprite2D" parent="."]
+position = Vector2(577, 326)
+scale = Vector2(0.903, 0.903)
+texture = ExtResource("1_1fhj5")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_16pka")]
+position = Vector2(65, 592)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(217, 21.25)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(796.25, 56.75)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(800, 539)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(156.063, 438)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+shape = SubResource("SegmentShape2D_rj586")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+shape = SubResource("SegmentShape2D_4d7sh")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+shape = SubResource("SegmentShape2D_ir8iy")
+
+[node name="TextureButton1" type="TextureButton" parent="."]
+offset_left = 50.0
+offset_top = 401.0
+offset_right = 81.0
+offset_bottom = 441.0
+
+[node name="1Кнопка" type="Sprite2D" parent="TextureButton1"]
+position = Vector2(15, 22)
+scale = Vector2(0.0585714, 0.0585714)
+texture = ExtResource("3_1jdk1")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+offset_left = 106.0
+offset_top = 399.0
+offset_right = 138.0
+offset_bottom = 443.0
+
+[node name="2Кнопка" type="Sprite2D" parent="TextureButton2"]
+position = Vector2(17, 23)
+scale = Vector2(0.0592857, 0.0592857)
+texture = ExtResource("4_6p2dc")
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+offset_left = 161.0
+offset_top = 400.0
+offset_right = 193.0
+offset_bottom = 440.0
+
+[node name="4Кнопка" type="Sprite2D" parent="TextureButton4"]
+position = Vector2(16, 22)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_fmu3g")
+
+[connection signal="pressed" from="TextureButton1" to="CharacterBody2D" method="_on_texture_button_1_pressed"]
+[connection signal="pressed" from="TextureButton2" to="CharacterBody2D" method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton4" to="CharacterBody2D" method="_on_texture_button_4_pressed"]

@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://j6b17f2qtlc0"]
+
+[ext_resource type="Texture2D" uid="uid://ciryrra0hvwea" path="res://1 Этаж .jpg" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://fv36wurxih2m" path="res://level_1.gd" id="1_hn12h"]
+[ext_resource type="PackedScene" uid="uid://g6aen0k0p4db" path="res://player/character_body_2d.tscn" id="2_hbghi"]
+[ext_resource type="Texture2D" uid="uid://ifkokmeawx3i" path="res://2 кнопка.png" id="4_ihfcg"]
+[ext_resource type="Texture2D" uid="uid://bpwfxxd2wc1bh" path="res://4 кнопка.png" id="5_5hph3"]
+[ext_resource type="Texture2D" uid="uid://d184b8bfiqfpn" path="res://3 кнопка.png" id="6_j7kpp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihfcg"]
+size = Vector2(1155, 116.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbghi"]
+size = Vector2(69, 537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn12h"]
+size = Vector2(554.5, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rka8t"]
+size = Vector2(140.25, 334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hph3"]
+size = Vector2(31.5, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7kpp"]
+size = Vector2(63, 163)
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_hn12h")
+
+[node name="1Этаж" type="Sprite2D" parent="."]
+position = Vector2(578.25, 325)
+scale = Vector2(0.902734, 0.905556)
+texture = ExtResource("1_3hls8")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_hbghi")]
+position = Vector2(887, 590)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578.5, 56.75)
+shape = SubResource("RectangleShape2D_ihfcg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(34, 382.5)
+shape = SubResource("RectangleShape2D_hbghi")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(346.75, 383)
+shape = SubResource("RectangleShape2D_hn12h")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1084, 283)
+shape = SubResource("RectangleShape2D_rka8t")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(885.25, 378)
+shape = SubResource("RectangleShape2D_5hph3")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(1128.5, 568.5)
+shape = SubResource("RectangleShape2D_j7kpp")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 161.0
+offset_top = 127.0
+offset_right = 201.0
+offset_bottom = 167.0
+
+[node name="2Кнопка" type="Sprite2D" parent="TextureButton"]
+position = Vector2(17, 29)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_ihfcg")
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+offset_left = 283.0
+offset_top = 133.0
+offset_right = 323.0
+offset_bottom = 173.0
+
+[node name="4Кнопка" type="Sprite2D" parent="TextureButton4"]
+position = Vector2(18, 22)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_5hph3")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 224.0
+offset_top = 135.0
+offset_right = 264.0
+offset_bottom = 175.0
+
+[node name="3Кнопка" type="Sprite2D" parent="TextureButton3"]
+position = Vector2(12, 20)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_j7kpp")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

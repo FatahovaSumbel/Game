@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://fxrq4t5tdqa1"]
+
+[ext_resource type="Script" uid="uid://4q8ely87f2jl" path="res://area_2d.gd" id="1_p1vir"]
+
+[node name="transition_button" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_p1vir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]

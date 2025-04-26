@@ -1,0 +1,135 @@
+[gd_scene load_steps=15 format=3 uid="uid://bo8ip0dmwd4t4"]
+
+[ext_resource type="Texture2D" uid="uid://d3qe5chyxt0k4" path="res://2 этаж.jpg" id="1_jg0dc"]
+[ext_resource type="PackedScene" uid="uid://g6aen0k0p4db" path="res://player/character_body_2d.tscn" id="2_nmjpi"]
+[ext_resource type="Texture2D" uid="uid://c6y0slliwgv0c" path="res://1 кнопка.png" id="3_n7ypv"]
+[ext_resource type="Texture2D" uid="uid://d184b8bfiqfpn" path="res://3 кнопка.png" id="4_0s5r2"]
+[ext_resource type="Texture2D" uid="uid://bpwfxxd2wc1bh" path="res://4 кнопка.png" id="5_7j8ne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmjpi"]
+size = Vector2(478.75, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdadj"]
+size = Vector2(682, 140.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y8me"]
+size = Vector2(317.5, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7ypv"]
+size = Vector2(457.5, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
+size = Vector2(179, 249)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7j8ne"]
+a = Vector2(724, -183)
+b = Vector2(729, 291)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7dov7"]
+a = Vector2(0, 647)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ehv2h"]
+a = Vector2(0, 648)
+b = Vector2(1154, 652)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j8ne"]
+size = Vector2(77, 91)
+
+[node name="level_2" type="Node2D"]
+
+[node name="2Этаж" type="Sprite2D" parent="."]
+position = Vector2(579, 327)
+scale = Vector2(0.903, 0.903)
+texture = ExtResource("1_jg0dc")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_nmjpi")]
+position = Vector2(213, 588)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(238.625, 43.5)
+shape = SubResource("RectangleShape2D_nmjpi")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(816, 73.75)
+shape = SubResource("RectangleShape2D_xdadj")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(159.25, 426)
+shape = SubResource("RectangleShape2D_1y8me")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(718.25, 387.5)
+shape = SubResource("RectangleShape2D_n7ypv")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(575.5, 527.5)
+shape = SubResource("RectangleShape2D_0s5r2")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(428, 352)
+shape = SubResource("SegmentShape2D_7j8ne")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+shape = SubResource("SegmentShape2D_7dov7")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+shape = SubResource("SegmentShape2D_ehv2h")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(785.5, 606)
+shape = SubResource("RectangleShape2D_7j8ne")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 3.0
+offset_top = 373.0
+offset_right = 43.0
+offset_bottom = 411.0
+
+[node name="1Кнопка" type="Sprite2D" parent="TextureButton"]
+position = Vector2(19.65, 19.05)
+scale = Vector2(0.0781429, 0.071)
+texture = ExtResource("3_n7ypv")
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 72.0
+offset_top = 364.0
+offset_right = 105.0
+offset_bottom = 411.0
+
+[node name="3Кнопка" type="Sprite2D" parent="TextureButton3"]
+position = Vector2(16, 28)
+scale = Vector2(0.0735714, 0.0723413)
+texture = ExtResource("4_0s5r2")
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+offset_left = 142.0
+offset_top = 368.0
+offset_right = 175.0
+offset_bottom = 416.0
+
+[node name="4Кнопка" type="Sprite2D" parent="TextureButton4"]
+position = Vector2(16, 25)
+scale = Vector2(0.0728572, 0.0728572)
+texture = ExtResource("5_7j8ne")
+
+[connection signal="pressed" from="TextureButton" to="CharacterBody2D" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton3" to="CharacterBody2D" method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="TextureButton4" to="CharacterBody2D" method="_on_texture_button_4_pressed"]
